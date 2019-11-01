@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    
+    
+    float highTemp;
+    float lowTemp;
+    float degreeday;
+    float FDD;
+    float iceMade; 
+    float totalIce = 0; 
+    
+     Scanner x = new Scanner(System.in);
+   
+    System.out.println("This is a simple Ice calculator!");
+   
+   while(true)
+   {
+    
+    System.out.println("Enter the High For the Day");
+    highTemp = x.nextFloat();
+     
+     if(highTemp == -787)
+    {
+      break;
+    }
+    
+    System.out.println("Enter the low temp");
+    lowTemp = x.nextFloat();
+   
+     degreeday = average(highTemp,lowTemp);
+     FDD = (32 - degreeday);
+     iceMade = FDD/15;
+     totalIce = (totalIce + iceMade);
+    
+    
+    String str = String.format("%.02f", iceMade);
+    String ice = String.format("%.02f", totalIce);
+    System.out.println("Inches of Ice made: " + str);
+    System.out.println("The ice total so far is: " + ice);
+    
+   
+    
+    
+   }
+   
+  }
+
+
+  private static float average(float num1, float num2)
+  {
+    float av = (num1 + num2) / 2;
+    return av;
+  }
+
+ 
+
+}
